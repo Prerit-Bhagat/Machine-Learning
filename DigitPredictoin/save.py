@@ -32,17 +32,18 @@ if os.path.exists(model_path):
             # pixels = np.fromstring(pixels, sep=',')
             pixels=np.array([pixels])
             # Make prediction
-            prediction = model.predict(pixels)
+            # prediction = model.predict(pixels)
             
             # Apply softmax to get probabilities
-            prediction = tf.nn.softmax(prediction)
+            # prediction = tf.nn.softmax(prediction)
             
             # Determine the predicted class
-            val = np.argmax(prediction, axis=1)[0]
+            # val = np.argmax(prediction, axis=1)[0]
             
             # Prepare the response
-            result = {'Image': int(val)}
-            return jsonify(result)
+            return 'pixels'
+            # result = {'Image': int(val)}
+            # return jsonify(result)
         except Exception as e:
             return jsonify({'error': str(e)})
 
